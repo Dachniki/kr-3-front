@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный интернет-магазин — главная</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-header__logo" href="index.html">Камни</a>
+            <nav class="site-nav" aria-label="Основная навигация">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link site-nav__link--active" href="index.html">Главная</a></li>
+                    <li><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+                    <li><a class="site-nav__link" href="product.html">Товар</a></li>
+                    <li><a class="site-nav__link" href="order.html">Заявка</a></li>
+                    <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__content">
+                <h1 class="hero__title">Камни</h1>
+                <p>
+                    Это стартовая страница учебного frontend-проекта. 
+                    В дальнейшем на её основе будет разработан многостраничный сайт.
+                </p>
+                <p>
+                    <a class="button button--primary" href="#popular" style="max-width: 200px;">Перейти к товарам</a>
+                </p>
+            </div>
+            <img class="hero__image" src="https://avatars.mds.yandex.net/i?id=58567837ef26dea9fe3838b6d7ebc640ea1b782c-5487031-images-thumbs&n=13" alt="Камень">
+        </section>
+
+        <section class="section" id="advantages">
+            <h2 class="section__title" style="text-align: center;">Преимущества проекта</h2>
+            <ul style="list-style: none; padding: 0; text-align: center;">
+                <li>понятная HTML-структура;</li>
+                <li>семантические блоки страницы;</li>
+                <li>подключение внешнего CSS-файла;</li>
+                <li>подготовка к разработке многостраничного сайта.</li>
+            </ul>
+        </section>
+
+        <section class="section" id="popular">
+            <h2 class="section__title" style="text-align: center;">Популярные товары</h2>
+            <div class="products-grid">
+                <article class="product-card">
+                    <img class="product-card__image" src="https://avatars.mds.yandex.net/i?id=58567837ef26dea9fe3838b6d7ebc640ea1b782c-5487031-images-thumbs&n=13" alt="Камень дешевый">
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Камень дещевый</h3>
+                        <p class="product-card__description">Неинтересный, скучный, бесформенный.</p>
+                        <p class="product-card__price">Цена: 1000 руб.</p>
+                        <button class="button button--primary product-card__button" type="button">Заказать</button>
+                    </div>
+                </article>
+                
+                <article class="product-card">
+                    <img class="product-card__image" src="https://i.pinimg.com/originals/68/7c/38/687c38bbaa4721fd4ca36ad91a3ef34c.jpg?nii=t" alt="Камень средний">
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Камень средний</h3>
+                        <p class="product-card__description">Имеет отчетливую форму, можно поиграть с ним.</p>
+                        <p class="product-card__price">Цена: 20000 руб.</p>
+                        <button class="button button--primary product-card__button" type="button">Заказать</button>
+                    </div>
+                </article>
+                
+                <article class="product-card">
+                    <img class="product-card__image" src="https://cs6.livemaster.ru/storage/e7/f3/16010c7eff672c072117bc1491xf.jpg" alt="Камень дорогой">
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Камень дорогой</h3>
+                        <p class="product-card__description">Идеальная форма камня, крутая эстэтика.</p>
+                        <p class="product-card__price">Цена: 1000000 руб.</p>
+                        <button class="button button--primary product-card__button" type="button">Заказать</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    </footer>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <dialog class="order-dialog" id="order-dialog">
+        <h2 style="margin-top: 0;">Оформление заявки</h2>
+        <form class="order-form" id="order-form" novalidate>
+            <div class="order-form__field">
+                <label class="order-form__label" for="name">Имя</label>
+                <input class="order-form__input" id="name" type="text" placeholder="Введите ваше имя" minlength="2" required>
+            </div>
+            
+            <div class="order-form__field">
+                <label class="order-form__label" for="email">E-mail</label>
+                <input class="order-form__input" id="email" type="email" placeholder="example@mail.ru" required>
+            </div>
+            
+            <div class="order-form__field">
+                <label class="order-form__label" for="phone">Телефон</label>
+                <input class="order-form__input" id="phone" type="tel" placeholder="+7 (900) 000-00-00" required>
+            </div>
+            
+            <div class="order-form__actions">
+                <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+                <button class="button button--primary" type="submit">Отправить</button>
+            </div>
+        </form>
+    </dialog>
+
+    <p class="success-message" id="success-message" hidden>Форма успешно отправлена!</p>
+
+</body>
+</html>
