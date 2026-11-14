@@ -1,0 +1,329 @@
+/* ===== 1. ПЕРЕМЕННЫЕ ===== */
+:root {
+    --color-bg: #f3f1ef;
+    --color-text: #1f2937;
+    --color-muted: #4b5563;
+    --color-primary: #0057b8;
+    --color-primary-dark: #003f86;
+    --color-border: #c7c0bb;
+    --color-surface: #e7eefc;
+    --color-surface-accent: #dfe7f6;
+    --color-white: #ffffff;
+    --container-width: 1100px;
+    
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+}
+
+/* ===== 2. БАЗОВЫЕ СТИЛИ ===== */
+*, 
+*::before, 
+*::after { 
+    box-sizing: border-box; 
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+img { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+/* ===== 3. КОНТЕЙНЕРЫ ===== */
+main, 
+.site-header__inner, 
+.site-footer {
+    width: 100%;
+    padding: 0 var(--space-md);
+    margin: 0 auto;
+}
+
+/* ===== 4. ШАПКА И НАВИГАЦИЯ ===== */
+.site-header { 
+    background-color: var(--color-surface); 
+    padding: var(--space-md) 0; 
+}
+
+.site-header__inner { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: var(--space-md); 
+}
+
+.site-header__logo { 
+    font-weight: bold; 
+    font-size: 24px; 
+    text-decoration: none; 
+    color: var(--color-text); 
+}
+
+.site-nav__list { 
+    display: flex; 
+    flex-direction: column; 
+    gap: var(--space-sm); 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    align-items: center; 
+}
+
+.site-nav__link { 
+    text-decoration: none; 
+    color: var(--color-primary); 
+    padding: 8px 16px; 
+    border-radius: 6px; 
+    display: block; 
+}
+
+.site-nav__link--active, 
+.site-nav__link:hover { 
+    background-color: var(--color-primary); 
+    color: var(--color-white); 
+}
+
+/* ===== 5. HERO ===== */
+.hero { 
+    padding: var(--space-xl) var(--space-md); 
+    background-color: var(--color-surface-accent); 
+    border-radius: 12px; 
+    text-align: center; 
+    margin: var(--space-lg) 0; 
+    display: flex; 
+    flex-direction: column; 
+    gap: var(--space-lg); 
+    align-items: center; 
+}
+
+.hero__content { 
+    text-align: center; 
+}
+
+.hero__title { 
+    font-size: clamp(28px, 6vw, 48px); 
+    margin-top: 0; 
+}
+
+.hero__image { 
+    max-width: 100%; 
+    border-radius: 12px; 
+}
+
+/* ===== 6. СЕТКА КАРТОЧЕК ===== */
+.products-grid { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: var(--space-lg); 
+    margin: var(--space-lg) 0; 
+}
+
+.product-card { 
+    display: flex; 
+    flex-direction: column; 
+    background-color: var(--color-white); 
+    border: 1px solid var(--color-border); 
+    border-radius: 12px; 
+    overflow: hidden; 
+}
+
+.product-card__image { 
+    width: 100%; 
+    height: 220px; 
+    object-fit: cover; 
+    border-bottom: 1px solid var(--color-border); 
+}
+
+.product-card__content { 
+    padding: var(--space-md); 
+    display: flex; 
+    flex-direction: column; 
+    flex-grow: 1; 
+}
+
+.product-card__title { 
+    margin-top: 0; 
+    margin-bottom: var(--space-sm); 
+    font-size: 20px; 
+}
+
+.product-card__description { 
+    color: var(--color-muted); 
+    flex-grow: 1; 
+    margin-bottom: var(--space-md); 
+}
+
+.product-card__price { 
+    font-weight: 700; 
+    font-size: 18px; 
+    margin-bottom: var(--space-md); 
+}
+
+/* ===== 7. КНОПКИ ===== */
+.button { 
+    display: inline-block; 
+    padding: 12px 24px; 
+    border: none; 
+    border-radius: 6px; 
+    font: inherit; 
+    text-align: center; 
+    text-decoration: none; 
+    cursor: pointer; 
+    width: 100%; 
+}
+
+.button--primary { 
+    color: var(--color-white); 
+    background-color: var(--color-primary); 
+    margin-top: auto; 
+}
+
+.button--primary:hover { 
+    background-color: var(--color-primary-dark); 
+}
+
+.button--secondary { 
+    color: var(--color-primary); 
+    background-color: transparent; 
+    border: 1px solid var(--color-primary); 
+    margin-top: 10px; 
+}
+
+/* ===== 8. КАТАЛОГ ===== */
+.catalog-layout { 
+    display: flex; 
+    flex-direction: column; 
+    gap: var(--space-lg); 
+    margin-top: var(--space-lg); 
+}
+
+.catalog-filters { 
+    background-color: var(--color-surface); 
+    padding: var(--space-md); 
+    border-radius: 12px; 
+}
+
+.filters-form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: var(--space-md); 
+}
+
+.filters-form .button { 
+    width: 100%; 
+}
+
+/* ===== 9. СТРАНИЦА ТОВАРА ===== */
+.product-detail { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: var(--space-lg); 
+    margin-top: var(--space-lg); 
+}
+
+.product-detail__image { 
+    width: 100%; 
+    border-radius: 12px; 
+    border: 1px solid var(--color-border); 
+}
+
+.product-detail__info { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.product-detail__price { 
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-bottom: var(--space-md); 
+}
+
+/* ===== 10. ТАБЛИЦА ===== */
+.table-wrapper { 
+    width: 100%; 
+    overflow-x: auto; 
+    margin-bottom: var(--space-lg); 
+}
+
+.product-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.product-table th, 
+.product-table td { 
+    padding: 12px; 
+    border: 1px solid var(--color-border); 
+    text-align: left; 
+}
+
+/* ===== 11. ФОРМА И МОДАЛЬНОЕ ОКНО ===== */
+.site-footer { 
+    text-align: center; 
+    background-color: var(--color-surface); 
+    padding: var(--space-lg) 0; 
+    margin-top: 40px; 
+}
+
+.order-dialog { 
+    width: min(100% - 32px, 500px); 
+    padding: 24px; 
+    border: none; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+}
+
+.order-dialog::backdrop { 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.order-form__field { 
+    margin-bottom: 16px; 
+}
+
+.order-form__label { 
+    display: block; 
+    margin-bottom: 6px; 
+    font-weight: 500; 
+    font-size: 14px; 
+}
+
+.order-form__input, 
+.order-form__textarea { 
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid var(--color-border); 
+    border-radius: 6px; 
+    font: inherit; 
+}
+
+.order-form__actions { 
+    display: flex; 
+    gap: 10px; 
+    margin-top: 20px; 
+}
+
+.order-form__actions .button { 
+    width: 50%; 
+}
+
+.success-message { 
+    background-color: #e6f7ea; 
+    color: #168a2f; 
+    padding: 16px; 
+    border-radius: 6px; 
+    margin-top: 20px; 
+    text-align: center; 
+    font-weight: bold; 
+}
